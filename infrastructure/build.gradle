@@ -12,6 +12,7 @@ dependencies {
     implementation project(':domain')
     implementation project(':controller')
     implementation project(':shared-jackson')
+    implementation project(':shared-async-extension')
 
     // ktor
     implementation "io.ktor:ktor-server-netty:$ktor_version"

@@ -1,4 +1,4 @@
-package main.kotlin.module.setup.koin
+package main.kotlin.module.setup.koin.deps
 
 import controllers.ProvinceController
 import org.koin.core.module.Module

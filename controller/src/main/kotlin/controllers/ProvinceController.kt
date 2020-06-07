@@ -6,12 +6,12 @@ import province.ProvinceService
 class ProvinceController(
     private val service: ProvinceService
 ) {
-    fun findBy(provinceId: String): ProvinceResponse {
+    suspend fun findBy(provinceId: String): ProvinceResponse {
         return service.findBy(provinceId).let(::ProvinceResponse)
     }
 
-    fun findAll(): List<ProvinceResponse> {
-        return emptyList()
+    suspend fun findAll(): List<ProvinceResponse> {
+        return service.findAll().map(::ProvinceResponse)
     }
 }
 

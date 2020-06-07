@@ -1,6 +1,6 @@
 package province
 
 interface ProvinceRepository {
-    fun fetch(): List<ProvinceDto>
-    fun findBy(provinceId: String): ProvinceDto?
+    suspend fun findAll(): List<ProvinceDto>
+    suspend fun findBy(provinceId: String): ProvinceDto?
 }

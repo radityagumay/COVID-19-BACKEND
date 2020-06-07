@@ -6,3 +6,6 @@ include 'data'
 
 include ':shared-jackson'
 project(':shared-jackson').projectDir = new File("./shared/shared-jackson")
+
+include ':shared-async-extension'
+project(':shared-async-extension').projectDir = new File("./shared/shared-async-extension")

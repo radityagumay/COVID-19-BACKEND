@@ -10,3 +10,4 @@
 /controller/build/
 /infrastructure/build/
 /shared/shared-jackson/build/
+/shared/shared-async-extension/build/

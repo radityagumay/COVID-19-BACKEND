@@ -1,10 +1,11 @@
+@file:Suppress("EXPERIMENTAL_API_USAGE")
+
 package main.kotlin.module.routing
 
 import controllers.ProvinceController
+import extension.responseAsync
 import io.ktor.application.Application
 import io.ktor.application.call
-import io.ktor.application.log
-import io.ktor.locations.KtorExperimentalLocationsAPI
 import io.ktor.locations.Location
 import io.ktor.locations.get
 import io.ktor.response.respond
@@ -12,9 +13,9 @@ import io.ktor.routing.Routing
 import io.ktor.routing.get
 import io.ktor.routing.route
 import io.ktor.routing.routing
+import kotlinx.coroutines.Dispatchers
 import org.koin.ktor.ext.inject
 
-@KtorExperimentalLocationsAPI
 fun Application.provinceRouterModule() {
     val app = this
     routing {
@@ -22,22 +23,21 @@ fun Application.provinceRouterModule() {
     }
 }
 
-@KtorExperimentalLocationsAPI
+@Location("/{id}")
+data class ProvinceParam(val id: String)
+
 private fun Routing.root(app: Application) {
     val controller: ProvinceController by inject()
 
     route("/province") {
         get<ProvinceParam> { param ->
-            call.respond(controller.findBy(param.id))
+            call.responseAsync(Dispatchers.IO) {
+                controller.findBy(param.id)
+            }
         }
 
         get {
-            app.log.debug("TAG : find all")
             call.respond(controller.findAll())
         }
     }
 }
-
-@KtorExperimentalLocationsAPI
-@Location("/{id}")
-data class ProvinceParam(val id: String)
