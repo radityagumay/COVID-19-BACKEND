@@ -5,3 +5,8 @@
 *.iml
 *.ipr
 *.iws
+/domain/build/
+/data/build/
+/controller/build/
+/infrastructure/build/
+/shared/shared-jackson/build/

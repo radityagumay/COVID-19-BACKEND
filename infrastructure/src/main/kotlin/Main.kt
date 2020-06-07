@@ -1,7 +1,7 @@
-package com.radityalabs
+package main.kotlin
 
 import io.ktor.server.netty.EngineMain
-import java.util.*
+import java.util.Collections
 
 fun main(args: Array<String>): Unit = EngineMain.main(args)
 

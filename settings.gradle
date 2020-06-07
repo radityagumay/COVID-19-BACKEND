@@ -1,1 +1,8 @@
 rootProject.name = "learning-ktor"
+include 'infrastructure'
+include 'controller'
+include 'domain'
+include 'data'
+
+include ':shared-jackson'
+project(':shared-jackson').projectDir = new File("./shared/shared-jackson")

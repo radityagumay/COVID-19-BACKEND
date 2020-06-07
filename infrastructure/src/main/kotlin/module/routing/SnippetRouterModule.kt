@@ -1,8 +1,5 @@
-package com.radityalabs.module
+package main.kotlin.module.routing
 
-import com.radityalabs.PostSnippet
-import com.radityalabs.Snippet
-import com.radityalabs.snippets
 import io.ktor.application.Application
 import io.ktor.application.call
 import io.ktor.application.log
@@ -12,9 +9,11 @@ import io.ktor.routing.get
 import io.ktor.routing.post
 import io.ktor.routing.route
 import io.ktor.routing.routing
+import main.kotlin.PostSnippet
+import main.kotlin.Snippet
+import main.kotlin.snippets
 
-@kotlin.jvm.JvmOverloads
-fun Application.routeModule() {
+fun Application.snippetRouterModule() {
     routing {
         route("/snippet") {
             get {
