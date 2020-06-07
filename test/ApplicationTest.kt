@@ -1,25 +1,17 @@
 package com.radityalabs
 
-import io.ktor.application.*
-import io.ktor.response.*
-import io.ktor.request.*
-import io.ktor.routing.*
-import io.ktor.http.*
-import io.ktor.html.*
-import kotlinx.html.*
-import kotlinx.css.*
-import com.github.mustachejava.DefaultMustacheFactory
-import io.ktor.mustache.Mustache
-import io.ktor.mustache.MustacheContent
-import io.ktor.client.*
-import io.ktor.client.engine.apache.*
-import kotlin.test.*
-import io.ktor.server.testing.*
+import com.radityalabs.module.mainModule
+import io.ktor.http.HttpMethod
+import io.ktor.http.HttpStatusCode
+import io.ktor.server.testing.handleRequest
+import io.ktor.server.testing.withTestApplication
+import kotlin.test.Test
+import kotlin.test.assertEquals
 
 class ApplicationTest {
     @Test
     fun testRoot() {
-        withTestApplication({ module(testing = true) }) {
+        withTestApplication({ mainModule(testing = true) }) {
             handleRequest(HttpMethod.Get, "/").apply {
                 assertEquals(HttpStatusCode.OK, response.status())
                 assertEquals("HELLO WORLD!", response.content)
