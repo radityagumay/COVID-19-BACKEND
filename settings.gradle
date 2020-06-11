@@ -1,9 +1,11 @@
 rootProject.name = "covid-19-backend"
 include 'infrastructure'
-include 'controller'
-include 'domain'
-include 'data'
 
+// services
+include ':service-province'
+project(':service-province').projectDir = new File("./services/service-province")
+
+// shared
 include ':shared-jackson'
 project(':shared-jackson').projectDir = new File("./shared/shared-jackson")
 

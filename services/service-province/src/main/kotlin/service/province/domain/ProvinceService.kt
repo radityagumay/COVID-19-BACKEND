@@ -1,4 +1,4 @@
-package province
+package service.province.domain
 
 interface ProvinceService {
     suspend fun findBy(provinceId: String): ProvinceDto

@@ -1,12 +1,12 @@
 package main.kotlin.module.setup.koin.deps
 
-import controllers.ProvinceController
 import org.koin.core.module.Module
 import org.koin.dsl.module
-import province.ProvinceRepository
-import province.ProvinceService
-import province.ProvinceServiceImpl
-import repository.ProvinceRepositoryImpl
+import service.province.controller.ProvinceController
+import service.province.data.ProvinceRepositoryImpl
+import service.province.domain.ProvinceRepository
+import service.province.domain.ProvinceService
+import service.province.domain.ProvinceServiceImpl
 
 val provinceKoinModule: Module
     get() = module {

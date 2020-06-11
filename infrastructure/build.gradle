@@ -8,9 +8,7 @@ repositories {
 }
 
 dependencies {
-    implementation project(':data')
-    implementation project(':domain')
-    implementation project(':controller')
+    implementation project(':service-province')
     implementation project(':shared-jackson')
     implementation project(':shared-async-extension')
 

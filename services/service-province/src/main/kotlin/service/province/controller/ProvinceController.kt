@@ -1,7 +1,7 @@
-package controllers
+package service.province.controller
 
-import province.ProvinceDto
-import province.ProvinceService
+import service.province.domain.ProvinceDto
+import service.province.domain.ProvinceService
 
 class ProvinceController(
     private val service: ProvinceService

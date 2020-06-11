@@ -2,7 +2,6 @@
 
 package main.kotlin.module.routing
 
-import controllers.ProvinceController
 import extension.responseAsync
 import io.ktor.application.Application
 import io.ktor.application.call
@@ -15,6 +14,7 @@ import io.ktor.routing.route
 import io.ktor.routing.routing
 import kotlinx.coroutines.Dispatchers
 import org.koin.ktor.ext.inject
+import service.province.controller.ProvinceController
 
 fun Application.provinceRouterModule() {
     val app = this
