@@ -1,5 +1,6 @@
 rootProject.name = "covid-19-backend"
 include 'infrastructure'
+include 'database'
 
 // services
 include ':service-province'
