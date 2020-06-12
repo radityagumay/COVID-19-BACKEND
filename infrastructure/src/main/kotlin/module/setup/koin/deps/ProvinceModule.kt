@@ -3,10 +3,10 @@ package main.kotlin.module.setup.koin.deps
 import org.koin.core.module.Module
 import org.koin.dsl.module
 import service.province.controller.ProvinceController
-import service.province.data.ProvinceRepositoryImpl
-import service.province.domain.ProvinceRepository
-import service.province.domain.ProvinceService
-import service.province.domain.ProvinceServiceImpl
+import service.province.data.ProvinceRepository
+import service.province.data.impl.ProvinceRepositoryImpl
+import service.province.domain.ProvinceUseCase
+import service.province.domain.impl.ProvinceServiceImpl
 
 val provinceKoinModule: Module
     get() = module {
@@ -14,7 +14,7 @@ val provinceKoinModule: Module
         single { ProvinceController(get()) }
 
         // Services
-        single<ProvinceService> { ProvinceServiceImpl(get()) }
+        single<ProvinceUseCase> { ProvinceServiceImpl(get()) }
 
         // Repositories
         single<ProvinceRepository> { ProvinceRepositoryImpl() }

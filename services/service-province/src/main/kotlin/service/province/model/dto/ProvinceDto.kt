@@ -1,4 +1,4 @@
-package service.province.domain
+package service.province.model.dto
 
 data class ProvinceDto(
     val id: String,

@@ -1,13 +1,12 @@
-package service.province.domain
+package service.province.domain.impl
 
-interface ProvinceService {
-    suspend fun findBy(provinceId: String): ProvinceDto
-    suspend fun findAll(): List<ProvinceDto>
-}
+import service.province.data.ProvinceRepository
+import service.province.domain.ProvinceUseCase
+import service.province.model.dto.ProvinceDto
 
 class ProvinceServiceImpl(
     private val repository: ProvinceRepository
-) : ProvinceService {
+) : ProvinceUseCase {
     override suspend fun findBy(provinceId: String): ProvinceDto {
         return repository.findBy(provinceId) ?: throw IllegalAccessException(
             "No Province Found for Given Id: $provinceId"

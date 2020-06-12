@@ -1,7 +1,7 @@
-package service.province.data
+package service.province.data.impl
 
-import service.province.domain.ProvinceDto
-import service.province.domain.ProvinceRepository
+import service.province.data.ProvinceRepository
+import service.province.model.dto.ProvinceDto
 
 class ProvinceRepositoryImpl : ProvinceRepository {
     override suspend fun findAll(): List<ProvinceDto> {

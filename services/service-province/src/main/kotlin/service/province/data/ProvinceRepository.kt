@@ -1,4 +1,6 @@
-package service.province.domain
+package service.province.data
+
+import service.province.model.dto.ProvinceDto
 
 interface ProvinceRepository {
     suspend fun findAll(): List<ProvinceDto>
