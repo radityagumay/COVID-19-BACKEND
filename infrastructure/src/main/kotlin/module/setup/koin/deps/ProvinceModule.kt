@@ -6,7 +6,7 @@ import service.province.controller.ProvinceController
 import service.province.data.ProvinceRepository
 import service.province.data.impl.ProvinceRepositoryImpl
 import service.province.domain.ProvinceUseCase
-import service.province.domain.impl.ProvinceServiceImpl
+import service.province.domain.impl.ProvinceUseCaseImpl
 
 val provinceKoinModule: Module
     get() = module {
@@ -14,7 +14,7 @@ val provinceKoinModule: Module
         single { ProvinceController(get()) }
 
         // Services
-        single<ProvinceUseCase> { ProvinceServiceImpl(get()) }
+        single<ProvinceUseCase> { ProvinceUseCaseImpl(get()) }
 
         // Repositories
         single<ProvinceRepository> { ProvinceRepositoryImpl() }

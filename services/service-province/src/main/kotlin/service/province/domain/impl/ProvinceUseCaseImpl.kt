@@ -4,7 +4,7 @@ import service.province.data.ProvinceRepository
 import service.province.domain.ProvinceUseCase
 import service.province.model.dto.ProvinceDto
 
-class ProvinceServiceImpl(
+class ProvinceUseCaseImpl(
     private val repository: ProvinceRepository
 ) : ProvinceUseCase {
     override suspend fun findBy(provinceId: String): ProvinceDto {
